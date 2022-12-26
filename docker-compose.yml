@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  autocracker:
+    build: .
+    container_name: autocracker
+    restart: "no"
+    environment:
+      - PERFORM_VALIDATION=True
+      - LOGFILE=log/autocracker.log
+    volumes:
+      - ./app:/opt/autocracker/app
+      - ./schemas:/opt/autocracker/schemas
+      - ./conf:/opt/autocracker/conf
+      - ./log:/opt/autocracker/log
+    network_mode: host

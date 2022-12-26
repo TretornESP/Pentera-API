@@ -1,0 +1,59 @@
+{
+    "$id": "https://ficticioussite.com/autocracker/creds/pentera.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Pentera config file",
+    "type": "object",
+    "properties": {
+        "ACHIEVEMENT_NAME": {
+            "type": "string",
+            "description": "Name required to identify the cracking achievement"
+        },
+        "MAX_WAIT_MILLIS": {
+            "type": "integer",
+            "description": "The minimum of milliseconds to wait pentera, usually set to a really high one",
+            "multipleOf": 1000,
+            "minimum": 1000
+        },
+        "TARGET_SCENARIO": {
+            "type": "string",
+            "description": "The name of the scenario to run"
+        },
+        "API_URL": {
+            "type": "string",
+            "description": "The URL of the pentera API",
+            "pattern": "^https?://"
+        },
+        "AUTH_ID": {
+            "type": "string",
+            "description": "The authentication ID to use"
+        },
+        "AUTH_TGT": {
+            "type": "string",
+            "description": "The authentication TGT to use"
+        },
+        "AUTH_TOKEN": {
+            "type": "string",
+            "description": "The authentication token to use"
+        }
+    },
+    "required": [
+        "ACHIEVEMENT_NAME",
+        "MAX_WAIT_MILLIS",
+        "TARGET_SCENARIO",
+        "API_URL",
+        "AUTH_ID",
+        "AUTH_TGT"
+    ],
+    "additionalProperties": false,
+    "examples": [
+        {
+            "ACHIEVEMENT_NAME": "Cracked user hash using GPU",
+            "MAX_WAIT_MILLIS": 3000000,
+            "TARGET_SCENARIO": "Cracking one",
+            "API_URL": "https://pentera.yoursite.com:8181/pentera/api/v1/",
+            "AUTH_ID": "****************************************",
+            "AUTH_TGT": "****************************************",
+            "AUTH_TOKEN": "****************************************"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+conf/*
+!conf/.gitkeep
+!conf/creds/
+conf/creds/*
+!conf/creds/.gitkeep
+log/*
+!log/.gitkeep
+__pycache__
+*.log
+*.pyc
+*.pyo
+*.pyd

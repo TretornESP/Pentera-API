@@ -1,0 +1,48 @@
+{
+    "$id": "https://ficticioussite.com/autocracker/creds/ad.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "AD configuration file",
+    "type": "object",
+    "properties": {
+        "user": {
+            "type": "string",
+            "description": "Username of the ad account"
+        },
+        "pass": {
+            "type": "string",
+            "description": "Password of the ad account"
+        },
+        "server": {
+            "type": "string",
+            "description": "Server of the ad account"
+        },
+        "domain": {
+            "type": "string",
+            "description": "Domain of the ad account"
+        },
+        "skip": {
+            "type": "array",
+            "description": "Array of usernames that we wont reset",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "user",
+        "pass",
+        "server",
+        "domain",
+        "skip"
+    ],
+    "additionalProperties": false,
+    "examples": [
+        {
+            "user": "autocracker",
+            "pass": "**********",
+            "server": "192.168.123.123",
+            "domain": "********",
+            "skip": ["importantuser"]
+        }    
+    ]
+}

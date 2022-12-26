@@ -1,0 +1,20 @@
+{
+    "$id": "https://ficticioussite.com/autocracker/conf.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Generic configuration file",
+    "type": "object",
+    "properties": {
+      "version": {
+        "type": "string",
+        "description": "The version for this program"
+      },
+      "logfile": {
+        "type": "string",
+        "description": "path for login files"
+      }
+    },
+    "required": [
+      "logfile"
+    ],
+    "additionalProperties": true
+  }

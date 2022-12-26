@@ -1,0 +1,51 @@
+{
+    "$id": "https://ficticioussite.com/autocracker/creds/email.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Email configuration file",
+    "type": "object",
+    "properties": {
+        "host": {
+            "type": "string",
+            "description": "Host of the email server"
+        },
+        "port": {
+            "type": "integer",
+            "description": "Port of the email server"
+        },
+        "username": {
+            "type": "string",
+            "description": "Username of the email account",
+            "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+        },
+        "password": {
+            "type": "string",
+            "description": "Password of the email account"
+        },
+        "to": {
+            "type": "array",
+            "description": "Array of email addresses to send the email to",
+            "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "host",
+        "port",
+        "username",
+        "password",
+        "to"
+    ],
+    "additionalProperties": false,
+    "examples": [
+        {
+            "host": "smtp.gmail.com",
+            "port": 587,
+            "username": "xabier.iglesias@gmail.com",
+            "password": "********",
+            "to": ["xabier.iglesias@gmail.com"]
+        }    
+    ]
+}
